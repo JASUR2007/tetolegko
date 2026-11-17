@@ -91,6 +91,20 @@ async function performSingleRequest(index, url, timeoutMs, noCache) {
     });
     statusCode = response.status;
 
+    if (!response.ok) {
+      const durationSeconds = (performance.now() - startTime) / 1000;
+      clearTimeout(timeoutId);
+      return {
+        index,
+        statusCode,
+        bytes: 0,
+        durationSeconds,
+        speedMbps: 0,
+        speedMBps: 0,
+        error: `HTTP ${statusCode}: ${response.statusText || 'Error'}`,
+      };
+    }
+
     if (!response.body) {
       const buffer = await response.arrayBuffer();
       downloadedBytes = buffer.byteLength;
