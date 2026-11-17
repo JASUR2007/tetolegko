@@ -231,7 +231,7 @@ async function main() {
   const wallDuration = (performance.now() - wallStart) / 1000;
   const hasSuccess = printSummary(results, wallDuration);
 
-  // Если все запросы провалились — возвращаем ненулевой код завершения
+  // Если все запросы провалились - возвращаем ненулевой код завершения
   if (!hasSuccess) {
     process.exit(1);
   }
@@ -271,9 +271,9 @@ function printSummary(results, wallDuration) {
   console.log(` Мин. / Макс. время запроса  : ${minTime.toFixed(3)} с / ${maxTime.toFixed(3)} с`);
   console.log('-'.repeat(72));
   console.log(' СКОРОСТЬ СКАЧИВАНИЯ:');
-  console.log(`   ► ${avgSpeedMbps.toFixed(2).padStart(8)} Mbps (Мегабит в секунду — стандарт телекома/провайдеров)`);
-  console.log(`   ► ${avgSpeedMBps.toFixed(2).padStart(8)} MB/s (Мегабайт в секунду, десятичные 10^6 байт/с)`);
-  console.log(`   ► ${avgSpeedMiBps.toFixed(2).padStart(8)} MiB/s (Мебибайт в секунду, двоичные 2^20 байт/с)`);
+  console.log(`   - ${avgSpeedMbps.toFixed(2).padStart(8)} Mbps (Мегабит в секунду - стандарт телекома/провайдеров)`);
+  console.log(`   - ${avgSpeedMBps.toFixed(2).padStart(8)} MB/s (Мегабайт в секунду, десятичные 10^6 байт/с)`);
+  console.log(`   - ${avgSpeedMiBps.toFixed(2).padStart(8)} MiB/s (Мебибайт в секунду, двоичные 2^20 байт/с)`);
   console.log('='.repeat(72));
   return true;
 }

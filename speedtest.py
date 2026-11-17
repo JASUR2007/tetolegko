@@ -233,9 +233,9 @@ def print_summary(results: List[RequestResult], total_wall_time: float) -> bool:
     print(f" Мин. / Макс. время запроса  : {min_time:.3f} с / {max_time:.3f} с")
     print("-" * 72)
     print(" СКОРОСТЬ СКАЧИВАНИЯ:")
-    print(f"   ► {avg_speed_mbps:8.2f} Mbps (Мегабит в секунду — стандарт телекома/провайдеров)")
-    print(f"   ► {avg_speed_mbytes_sec:8.2f} MB/s (Мегабайт в секунду, десятичные 10^6 байт/с)")
-    print(f"   ► {avg_speed_mebi_sec:8.2f} MiB/s (Мебибайт в секунду, двоичные 2^20 байт/с)")
+    print(f"   - {avg_speed_mbps:8.2f} Mbps (Мегабит в секунду - стандарт телекома/провайдеров)")
+    print(f"   - {avg_speed_mbytes_sec:8.2f} MB/s (Мегабайт в секунду, десятичные 10^6 байт/с)")
+    print(f"   - {avg_speed_mebi_sec:8.2f} MiB/s (Мебибайт в секунду, двоичные 2^20 байт/с)")
     print("=" * 72)
     return True
 
@@ -315,7 +315,7 @@ def main():
     wall_total = time.perf_counter() - wall_start
     has_success = print_summary(results, wall_total)
 
-    # Если все запросы провалились — возвращаем ненулевой код завершения
+    # Если все запросы провалились - возвращаем ненулевой код завершения
     if not has_success:
         sys.exit(1)
 
